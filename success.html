@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<meta name="description" content="HVC Law inquiry received confirmation page.">
+<title>Inquiry Received | HVC Law</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#171513;
+  --ink2:#26211c;
+  --gold:#e8c27d;
+  --gold2:#c89d55;
+  --cream:#f5efe5;
+  --paper:#fffaf1;
+  --muted:#746b61;
+  --line:rgba(33,28,22,.14);
+  --serif:"Playfair Display",Georgia,serif;
+  --sans:"DM Sans",Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  color:var(--ink);
+  font-family:var(--sans);
+  background:var(--paper);
+  line-height:1.55;
+}
+a{color:inherit;text-decoration:none}
+button{font:inherit}
+.site-header{
+  height:92px;
+  padding:0 5.5%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  color:white;
+  background:rgba(22,18,14,.96);
+  border-bottom:1px solid rgba(255,255,255,.09);
+}
+.brand-copy{display:flex;flex-direction:column}
+.brand-copy strong{
+  font-family:var(--serif);
+  font-size:21px;
+  font-weight:600;
+}
+.brand-copy span{
+  font-size:13px;
+  color:#ddd1c1;
+  margin-top:2px;
+}
+.menu-lines{display:flex;flex-direction:column;gap:5px}
+.menu-lines span{
+  display:block;
+  width:36px;
+  height:3px;
+  background:var(--gold);
+}
+.success-shell{
+  min-height:calc(100vh - 92px);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:76px 24px 90px;
+  background:
+    radial-gradient(circle at 50% 15%, rgba(232,194,125,.11), transparent 35%),
+    var(--cream);
+}
+.success-card{
+  width:min(760px,100%);
+  background:var(--paper);
+  border:1px solid rgba(200,157,85,.38);
+  box-shadow:0 22px 70px rgba(23,21,19,.10);
+  padding:clamp(38px,7vw,72px);
+  text-align:center;
+  position:relative;
+}
+.success-card:before{
+  content:"";
+  position:absolute;
+  top:0;left:0;right:0;
+  height:5px;
+  background:var(--gold);
+}
+.eyebrow{
+  color:#a47a3e;
+  font-size:13px;
+  font-weight:700;
+  letter-spacing:.24em;
+  text-transform:uppercase;
+  margin-bottom:18px;
+}
+.checkmark{
+  width:58px;height:58px;
+  margin:0 auto 24px;
+  border-radius:50%;
+  border:1px solid var(--gold2);
+  display:grid;
+  place-items:center;
+  color:#9b7138;
+  font-size:27px;
+  font-weight:600;
+}
+h1{
+  margin:0;
+  font-family:var(--serif);
+  font-size:clamp(38px,6vw,64px);
+  line-height:1.06;
+  font-weight:600;
+  letter-spacing:-.025em;
+}
+.lead{
+  max-width:610px;
+  margin:25px auto 0;
+  color:#625a52;
+  font-size:17px;
+}
+.reference-wrap{
+  margin:38px auto 0;
+  padding:23px 20px 25px;
+  border:1px solid rgba(200,157,85,.48);
+  background:#fbf5eb;
+}
+.reference-label{
+  color:#9b7138;
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  margin-bottom:9px;
+}
+.reference-code{
+  display:block;
+  color:var(--ink);
+  font-family:"DM Sans",Arial,sans-serif;
+  font-size:clamp(23px,5vw,36px);
+  font-weight:700;
+  letter-spacing:.08em;
+  line-height:1.25;
+  overflow-wrap:anywhere;
+  user-select:all;
+  -webkit-user-select:all;
+}
+.screenshot-note{
+  margin:10px 0 0;
+  color:#81776d;
+  font-size:12px;
+}
+.details{
+  margin:35px auto 0;
+  max-width:590px;
+  text-align:left;
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+  padding:4px 0;
+}
+.detail{
+  display:flex;
+  gap:20px;
+  align-items:flex-start;
+  padding:18px 0;
+  border-bottom:1px solid var(--line);
+}
+.detail:last-child{border-bottom:0}
+.detail strong{
+  flex:0 0 155px;
+  font-size:13px;
+  color:#3d3731;
+}
+.detail span{color:#6f675e;font-size:14px}
+.note{
+  margin:30px auto 0;
+  max-width:590px;
+  padding:18px 20px;
+  background:#eee4d6;
+  border-left:3px solid var(--gold2);
+  text-align:left;
+  color:#554c43;
+  font-size:14px;
+}
+.note strong{color:#2d2823}
+.actions{
+  display:flex;
+  justify-content:center;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-top:34px;
+}
+.action{
+  appearance:none;
+  border:1px solid rgba(200,157,85,.55);
+  background:transparent;
+  color:var(--ink);
+  padding:13px 21px;
+  border-radius:6px;
+  cursor:pointer;
+  font-weight:600;
+  transition:.2s ease;
+}
+.action:hover{background:rgba(200,157,85,.10)}
+.action.primary{background:var(--gold);border-color:var(--gold);color:#17130f}
+.action.primary:hover{background:#d9b36b}
+.footer{
+  background:#17120f;
+  color:#d9cec0;
+  padding:28px 5.5%;
+  text-align:center;
+  font-size:12px;
+}
+.footer strong{font-family:var(--serif);font-size:15px;color:#fff8ee}
+@media(max-width:600px){
+  .site-header{height:82px;padding:0 24px}
+  .brand-copy strong{font-size:18px}
+  .brand-copy span{font-size:11px}
+  .menu-lines span{width:32px;height:2px}
+  .success-shell{min-height:calc(100vh - 82px);padding:46px 16px 58px}
+  .success-card{padding:38px 22px 34px}
+  .lead{font-size:15px;line-height:1.7}
+  .detail{display:block}
+  .detail strong{display:block;margin-bottom:5px}
+  .reference-code{letter-spacing:.055em}
+}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="brand-copy">
+    <strong>Atty. Hagie V. Corotan, RN</strong>
+    <span>Legal Counsel · Notarial Services</span>
+  </div>
+  <div class="menu-lines" aria-hidden="true"><span></span><span></span><span></span></div>
+</header>
+
+<main class="success-shell">
+  <section class="success-card" aria-labelledby="success-title">
+    <div class="checkmark" aria-hidden="true">✓</div>
+    <div class="eyebrow">Inquiry Received</div>
+    <h1 id="success-title">Thank you for reaching out.</h1>
+    <p class="lead">Your inquiry has been successfully received and is now being processed by HVC Law. Please keep your case reference code for your records.</p>
+
+    <div class="reference-wrap">
+      <div class="reference-label">Your Case Reference</div>
+      <div class="reference-code" id="caseReference" role="status" aria-live="polite">HVC-—</div>
+      <p class="screenshot-note">You may screenshot this code for your records.</p>
+    </div>
+
+    <div class="details">
+      <div class="detail">
+        <strong>Assessment schedule</strong>
+        <span>You may receive a Zoom assessment schedule within 24 hours, subject to the review of your inquiry.</span>
+      </div>
+      <div class="detail">
+        <strong>Important</strong>
+        <span>The Zoom assessment schedule is <b>not the actual legal consultation</b>. It is a preliminary assessment and is <b>free of charge</b>.</span>
+      </div>
+    </div>
+
+    <div class="note">
+      <strong>Please keep this reference code.</strong><br>
+      It helps identify your inquiry when communicating with the office regarding your submission.
+    </div>
+
+    <div class="actions">
+      <button class="action primary" type="button" id="copyReference">Copy Reference</button>
+      <button class="action" type="button" id="backTop">Back to Top</button>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <strong>Atty. Hagie V. Corotan, RN</strong><br>
+  Legal Counsel · Notarial Services
+</footer>
+
+<script>
+(function(){
+  const WEB3FORMS_ACCESS_KEY = 'b02bfca0-bcb3-4b4f-af66-8dd105cf7ec4';
+  // The success page is intended to be the redirect target of the Web3Forms inquiry form.
+  // The inquiry form should generate the reference before submission and pass it as ?case_ref=...
+  // If a reference is not supplied, this page generates one so the page remains functional on its own.
+  const params = new URLSearchParams(window.location.search);
+  const supplied = (params.get('case_ref') || params.get('case') || '').trim();
+  const storageKey = 'hvc_law_last_case_reference';
+
+  function pad(n){ return String(n).padStart(2,'0'); }
+  function makeReference(){
+    const d = new Date();
+    // Requested structure: HVC-(YYMMDDSS)-(random letters/numbers)
+    const dateTime = String(d.getFullYear()).slice(-2) +
+      pad(d.getMonth()+1) + pad(d.getDate()) + pad(d.getSeconds());
+    const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+    let random = '';
+    const array = new Uint32Array(8);
+    if (window.crypto && crypto.getRandomValues) {
+      crypto.getRandomValues(array);
+      for(let i=0;i<array.length;i++) random += chars[array[i] % chars.length];
+    } else {
+      for(let i=0;i<8;i++) random += chars[Math.floor(Math.random()*chars.length)];
+    }
+    return `HVC-${dateTime}-${random}`;
+  }
+
+  // Supplied reference takes precedence. A locally generated reference is retained during refreshes.
+  let reference = supplied || sessionStorage.getItem(storageKey) || makeReference();
+  sessionStorage.setItem(storageKey, reference);
+  document.getElementById('caseReference').textContent = reference;
+
+  document.getElementById('copyReference').addEventListener('click', async function(){
+    try{
+      await navigator.clipboard.writeText(reference);
+      const original = this.textContent;
+      this.textContent = 'Copied';
+      setTimeout(()=>this.textContent = original, 1500);
+    }catch(e){
+      const range = document.createRange();
+      range.selectNodeContents(document.getElementById('caseReference'));
+      const selection = window.getSelection();
+      selection.removeAllRanges();
+      selection.addRange(range);
+    }
+  });
+
+  document.getElementById('backTop').addEventListener('click', function(){
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+
+  // Expose the key for the inquiry-form integration without making an API request here.
+  window.HVC_WEB3FORMS_ACCESS_KEY = WEB3FORMS_ACCESS_KEY;
+})();
+</script>
+</body>
+</html>
